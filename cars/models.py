@@ -8,7 +8,7 @@ class Brand(models.Model):
     def __str__(self):
         return self.brand_name
 
-class Car(models.Model):
+class Model(models.Model):
     model_name = models.CharField(max_length=30)
     width = models.FloatField()
     height = models.FloatField()
