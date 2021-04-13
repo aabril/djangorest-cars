@@ -4,7 +4,7 @@ from cars import models
 class ModelSerializer(serializers.ModelSerializer):
     class Meta: 
         fields = (
-            'model_name'
+            '__all__'
         )
         model = models.Model
 
