@@ -20,3 +20,13 @@ class ModelList(generics.ListCreateAPIView):
 class ModelDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Model.objects.all()
     serializer_class = ModelSerializer
+
+
+
+class BrandViewSet(viewsets.ModelViewSet):
+    """
+    A simple ViewSet for viewing and editing accounts.
+    """
+    queryset = Account.objects.all()
+    serializer_class = AccountSerializer
+    permission_classes = [IsAccountAdminOrReadOnly]
