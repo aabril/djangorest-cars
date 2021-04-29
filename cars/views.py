@@ -6,7 +6,6 @@ from .models import Car
 from .serializers import CarSerializer
 
 class CarViewSet(viewsets.ViewSet):
-
     def list(self, request):
         queryset = Car.objects.all()
         serializer = CarSerializer(queryset, many=True)
@@ -19,7 +18,6 @@ class CarViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
 class CarGenericViewSet(viewsets.GenericViewSet):
-    
     def get_queryset(self):
         queryset = Car.objects.all()
         return queryset
@@ -38,8 +36,6 @@ class CarGenericViewSet(viewsets.GenericViewSet):
         obj = self.get_object()
         serializer = CarSerializer(obj)
         return Response(serializer.data)
-
-
 
 class CarModelViewSet(viewsets.ModelViewSet):
     queryset = Car.objects.all()
