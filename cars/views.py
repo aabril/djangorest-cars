@@ -42,5 +42,6 @@ class CarGenericViewSet(viewsets.GenericViewSet):
 
 
 class CarModelViewSet(viewsets.ModelViewSet):
-    
-    pass
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
+    # permission_classes = [IsAdminUser]
